@@ -41,5 +41,33 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - com.dec05eba.gpu_screen_recorder
       - scope: user # Also add Flathub user repo, but no user packages
-
+        install:
+          - cc.arduino.IDE2
+          - com.discordapp.Discord
+          - com.github.tchx84.Flatseal
+          - org.raspberrypi.rpi-imager
+          - org.telegram.desktop
+          - org.videolan.VLC
+          - org.openscad.OpenSCAD
+          - org.kde.okular
+          - org.kde.kcalc
+          - org.kde.gwenview
+          - org.kde.filelight
+          - io.github.wdaniau.fstl
+          - io.github.tobagin.keysmith
+          - io.github.softfever.OrcaSlicer
+          - io.github.pwr_solaar.solaar
+          - dev.lizardbyte.app.Sunshine
+          - com.transmissionbt.Transmission
+          - io.m51.Gelly
+          - com.github.xournalpp.xournalpp
+          - com.vysp3r.ProtonPlus
+          - io.ente.auth
+          - io.github.DenysMb.Kontainer
+          - io.github.flattool.Warehouse
+          - io.github.giantpinkrobots.flatsweep
+          - it.mijorus.gearlever
+          - md.obsidian.Obsidian
+          - org.freecad.FreeCAD
+          - com.github.tchx84.Flatseal
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
