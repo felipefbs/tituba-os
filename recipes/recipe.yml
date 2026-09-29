@@ -25,7 +25,6 @@ modules:
         - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
     install:
       packages:
-        - micro
         - starship
         - espanso-wayland
         - steam
