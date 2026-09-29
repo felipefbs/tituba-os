@@ -57,7 +57,7 @@ modules:
           - org.kde.filelight
           - io.github.wdaniau.fstl
           - io.github.tobagin.keysmith
-          - io.github.softfever.OrcaSlicer
+          - com.orcaslicer.OrcaSlicer
           - io.github.pwr_solaar.solaar
           - dev.lizardbyte.app.Sunshine
           - com.transmissionbt.Transmission
