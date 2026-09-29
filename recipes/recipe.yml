@@ -21,6 +21,8 @@ modules:
     repos:
       copr:
         - atim/starship
+      files:
+        - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
     install:
       packages:
         - micro
