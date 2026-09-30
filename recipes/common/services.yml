@@ -13,7 +13,6 @@ modules:
     user:
       enabled:
         - syncthing.service
-        - dotfiles-link.service
 
   - type: script
     snippets:
