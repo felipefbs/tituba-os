@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    repos:
+      nonfree: rpmfusion
+      copr:
+        - lizardbyte/stable
+    install:
+      allow-erasing: true
+      packages:
+        - steam
+        - lutris
+        - gamescope
+        - mangohud
+        - mesa-dri-drivers
+        - mesa-vulkan-drivers
+        - Sunshine
+  - type: default-flatpaks
+    configurations:
+      - install:
+          - com.vysp3r.ProtonPlus
+  - type: systemd
+    user:
+      enabled:
+        - app-dev.lizardbyte.app.Sunshine.service
+  - type: script
+    snippets:
+      - firewall-offline-cmd --add-port=47984-47990/tcp
+      - firewall-offline-cmd --add-port=48010/tcp
+      - firewall-offline-cmd --add-port=47998-48000/udp
+      - firewall-offline-cmd --add-port=48002/udp

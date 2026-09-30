@@ -23,4 +23,5 @@ modules:
   - from-file: common/desktop.yml
   - from-file: common/terminal.yml
   - from-file: common/development.yml
+  - from-file: common/gaming.yml
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
