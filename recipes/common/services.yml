@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    install:
+      packages:
+        - firewalld
+
+  - type: systemd
+    system:
+      enabled:
+        - keyd.service
+        - sddm.service
+    user:
+      enabled:
+        - syncthing.service
+        - dotfiles-link.service
+
+  - type: script
+    snippets:
+      # timezone (base-main não define nenhuma)
+      - systemd-firstboot --force --timezone=America/Recife
+
+      # firewall: syncthing (sync + descoberta local + gui)
+      - firewall-offline-cmd --add-port=22000/tcp
+      - firewall-offline-cmd --add-port=22000/udp
+      - firewall-offline-cmd --add-port=21027/udp
+      - firewall-offline-cmd --add-port=8384/tcp
