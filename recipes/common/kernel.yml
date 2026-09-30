@@ -1,38 +1,8 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
 # swaps the stock kernel for Bazzite's "ogc" kernel, same as ghcr.io/ublue-os/bazzite
 modules:
-  - type: copy
-    from: ghcr.io/ublue-os/akmods:ogc-44
-    src: /kernel-rpms/
-    dest: /tmp/kernel-rpms
-
-  - type: script
-    snippets:
-      - |
-        pushd /usr/lib/kernel/install.d
-        mv 05-rpmostree.install 05-rpmostree.install.bak
-        mv 50-dracut.install 50-dracut.install.bak
-        printf '%s\n' '#!/bin/sh' 'exit 0' > 05-rpmostree.install
-        printf '%s\n' '#!/bin/sh' 'exit 0' > 50-dracut.install
-        chmod +x 05-rpmostree.install 50-dracut.install
-        popd
-
-        for pkg in kernel kernel{-core,-modules,-modules-core,-modules-extra,-tools-libs,-tools}; do
-          rpm --erase "${pkg}" --nodeps || true
-        done
-        rm -rf /usr/lib/modules
-
-        dnf5 -y install \
-          /tmp/kernel-rpms/kernel-[0-9]*.rpm \
-          /tmp/kernel-rpms/kernel-core-*.rpm \
-          /tmp/kernel-rpms/kernel-modules-*.rpm \
-          /tmp/kernel-rpms/kernel-devel-*.rpm
-
-        dnf5 versionlock add kernel kernel-devel kernel-devel-matched kernel-core kernel-modules
-
-        pushd /usr/lib/kernel/install.d
-        mv -f 05-rpmostree.install.bak 05-rpmostree.install
-        mv -f 50-dracut.install.bak 50-dracut.install
-        popd
-
-        rm -rf /tmp/kernel-rpms
+  - type: akmods
+    base: ogc # if not specified, classic "main" base is used by default
+    install:
+      - v4l2loopback
+      - xone
