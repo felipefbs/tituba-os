@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - arcticlore/candy
+    install:
+      packages:
+        - boxes
+        - git
+        - gh
+        - neovim
+        - gcc
+        - shellcheck
+        - shfmt
+        - clang-tools-extra
+  - type: default-flatpaks
+    configurations:
+      - notify: true
+        scope: user # Also add Flathub user repo, but no user packages
+        install:
+          - cc.arduino.IDE2
+          - org.openscad.OpenSCAD
+          - io.github.tobagin.keysmith
+          - io.github.DenysMb.Kontainer

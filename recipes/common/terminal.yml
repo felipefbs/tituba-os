@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - scottames/ghostty
+        - atim/starship
+    install:
+      packages:
+        - zsh
+        - make
+        - ripgrep
+        - fd-find
+        - jq
+        - fastfetch
+        - git-delta
+        - tree
+        - unzip
+        - zoxide
+        - chafa
+        - libsixel
+        - tmux
+        - bat
+        - btop
+        - fzf
+        - ghostty
+        - starship
+  - type: brew
