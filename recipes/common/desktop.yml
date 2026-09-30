@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    install:
+      packages:
+        - sddm
+        - sddm-wayland-generic
+        - xorg-x11-server-Xwayland
+        - xdg-desktop-portal-gtk
+
+  - type: dnf
+    repos:
+      files:
+        - https://raw.githubusercontent.com/terrapkg/packages/f%OS_VERSION%/anda/terra/release/terra.repo
+      keys:
+        - https://repos.fyralabs.com/terra%OS_VERSION%/key.asc
+    install:
+      packages:
+        - google-noto-emoji-fonts
+        - jetbrains-mono-fonts
+        - papirus-icon-theme
+        - breeze-cursor-theme
+        - noctalia
+
+  - type: dnf
+    repos:
+      copr:
+        - alternateved/keyd
+    install:
+      packages:
+        - keyd
+        # IME wayland-native, para compose sequences (~/.XCompose) em apps ozone/wayland
+        - fcitx5
+        - fcitx5-configtool
+        - fcitx5-gtk
+        - fcitx5-qt
