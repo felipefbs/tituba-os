@@ -23,11 +23,13 @@ modules:
         - atim/starship
       files:
         - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
     install:
       packages:
         - starship
         - espanso-wayland
         - steam
+        - brave-origin
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
