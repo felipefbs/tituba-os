@@ -52,3 +52,4 @@ modules:
           - it.mijorus.gearlever
           - md.obsidian.Obsidian
           - org.freecad.FreeCAD
+          - io.github.kolunmi.Bazaar
