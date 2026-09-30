@@ -18,7 +18,7 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - from-file: common/removing.yml
-  - from-file: common/kernel.yml
+  # - from-file: common/kernel.yml
   - from-file: common/base.yml
   - from-file: common/desktop.yml
   - from-file: common/terminal.yml
