@@ -10,6 +10,7 @@ modules:
       enabled:
         - keyd.service
         - sddm.service
+        - docker.socket
     user:
       enabled:
         - syncthing.service
