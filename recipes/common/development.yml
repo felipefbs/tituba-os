@@ -15,7 +15,6 @@ modules:
         - docker-buildx-plugin
         - docker-compose-plugin
         - code
-        - boxes
         - git
         - gh
         - neovim
@@ -32,3 +31,4 @@ modules:
           - org.openscad.OpenSCAD
           - io.github.tobagin.keysmith
           - io.github.DenysMb.Kontainer
+          - org.gnome.Boxes
