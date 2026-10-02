@@ -4,8 +4,15 @@ modules:
     repos:
       copr:
         - arcticlore/candy
+      files:
+        - https://download.docker.com/linux/fedora/docker-ce.repo
     install:
       packages:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
         - boxes
         - git
         - gh
