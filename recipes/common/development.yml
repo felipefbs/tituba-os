@@ -32,3 +32,4 @@ modules:
           - io.github.tobagin.keysmith
           - io.github.DenysMb.Kontainer
           - org.gnome.Boxes
+          - com.freerdp.FreeRDP
