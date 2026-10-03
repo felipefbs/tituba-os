@@ -11,8 +11,6 @@ modules:
       packages:
         - espanso-wayland
         - brave-origin
-        - syncthing
-        - tailscale
         - hushmic
         - okular
         - kcalc

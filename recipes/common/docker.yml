@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+# Docker Engine + compose; os arquivos compose ficam fora da imagem
+modules:
+  - type: dnf
+    repos:
+      files:
+        - https://download.docker.com/linux/fedora/docker-ce.repo
+    install:
+      packages:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
+
+  - type: systemd
+    system:
+      enabled:
+        # docker.service (e não só o socket) para que containers com restart
+        # policy subam no boot sem depender de uma chamada ao cliente
+        - docker.service
+        - docker.socket

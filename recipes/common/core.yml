@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+# base comum a todas as máquinas: firewall, VPN e timezone
+modules:
+  - type: dnf
+    install:
+      packages:
+        - firewalld
+        - tailscale
+
+  - type: script
+    snippets:
+      # timezone (base-main não define nenhuma)
+      - systemd-firstboot --force --timezone=America/Recife

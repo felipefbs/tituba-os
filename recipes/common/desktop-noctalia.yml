@@ -34,3 +34,9 @@ modules:
         - fcitx5-configtool
         - fcitx5-gtk
         - fcitx5-qt
+
+  - type: systemd
+    system:
+      enabled:
+        - keyd.service
+        - sddm.service
