@@ -1,0 +1,36 @@
+# Fórmulas Homebrew do tituba-os (apenas CLIs de espaço de usuário; sem casks, sem taps).
+# Aplicar com: just brew-sync   (brew bundle --file homebrew/Brewfile)
+# Nunca instalar via brew: ver docs/empacotamento.md
+
+# --- Essencial (ativo) ---
+brew "go"        # toolchain Go diário (não há golang no host)
+brew "bat"
+brew "fd"
+brew "fzf"
+brew "zoxide"
+brew "yq"        # mikefarah/yq
+brew "fastfetch"
+brew "lazygit"
+brew "stow"      # dotfiles
+
+# --- Produtividade opcional (desabilitado) ---
+# brew "starship"  # escolher no máximo um prompt
+brew "eza"
+brew "atuin"
+brew "yazi"
+# brew "hyperfine"
+brew "scc"       # ou tokei, só um
+brew "tealdeer"
+# brew "lazydocker"
+
+# --- Por projeto (desabilitado; preferir Distrobox dev-ops) ---
+# brew "arduino-cli"
+# brew "kubectl"
+# brew "helm"
+# brew "k9s"
+# brew "kind"
+# brew "opentofu"
+# brew "uv"
+# brew "ruff"
+# brew "goreleaser"
+brew "golangci-lint"
