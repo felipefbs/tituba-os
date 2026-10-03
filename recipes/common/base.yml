@@ -10,7 +10,6 @@ modules:
     install:
       packages:
         - espanso-wayland
-        - steam
         - brave-origin
         - syncthing
         - tailscale
@@ -31,22 +30,16 @@ modules:
       - notify: true
         scope: user # Also add Flathub user repo, but no user packages
         install:
-          - cc.arduino.IDE2
           - com.discordapp.Discord
           - com.github.tchx84.Flatseal
           - org.raspberrypi.rpi-imager
           - org.telegram.desktop
           - org.videolan.VLC
-          - org.openscad.OpenSCAD
           - io.github.wdaniau.fstl
-          - io.github.tobagin.keysmith
           - com.orcaslicer.OrcaSlicer
-          - dev.lizardbyte.app.Sunshine
           - io.m51.Gelly
           - com.github.xournalpp.xournalpp
-          - com.vysp3r.ProtonPlus
           - io.ente.auth
-          - io.github.DenysMb.Kontainer
           - io.github.flattool.Warehouse
           - io.github.giantpinkrobots.flatsweep
           - it.mijorus.gearlever

@@ -4,25 +4,18 @@ modules:
     repos:
       copr:
         - scottames/ghostty
-        - atim/starship
     install:
+      # CLIs de ciclo rápido (bat, fd, fzf, zoxide, fastfetch, starship) ficam no
+      # Homebrew do usuário: ver homebrew/Brewfile e docs/empacotamento.md
       packages:
         - zsh
         - make
         - ripgrep
-        - fd-find
         - jq
-        - fastfetch
         - git-delta
         - tree
         - unzip
-        - zoxide
         - chafa
         - libsixel
         - tmux
-        - bat
         - btop
-        - fzf
-        - ghostty
-        - starship
-  - type: brew
