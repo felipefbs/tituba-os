@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+# acesso remoto para máquinas administradas por SSH
+modules:
+  - type: dnf
+    install:
+      packages:
+        - openssh-server
+
+  - type: systemd
+    system:
+      enabled:
+        - sshd.service

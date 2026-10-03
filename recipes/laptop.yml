@@ -1,0 +1,32 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: tituba-os-laptop
+description: Laptop antigo com Cinnamon mínimo, host de containers e pihole de fallback.
+
+# base sem desktop; o Cinnamon vem de common/desktop-cinnamon.yml
+base-image: ghcr.io/ublue-os/base-main
+image-version: latest
+
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: /
+
+  - from-file: common/core.yml
+  - from-file: common/cli.yml
+  - from-file: common/docker.yml
+  - from-file: common/server.yml
+  - from-file: common/dns-host.yml
+  - from-file: common/desktop-cinnamon.yml
+
+  # único app gráfico além do que vem com o Cinnamon
+  - type: dnf
+    repos:
+      files:
+        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+    install:
+      packages:
+        - brave-origin
+
+  - type: signing
