@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+# libera a porta 53 do host para o pihole em container: desliga o stub listener
+# do systemd-resolved e aponta /etc/resolv.conf para os upstreams reais
+modules:
+  - type: files
+    files:
+      - source: dns-host
+        destination: /

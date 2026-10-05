@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+# Cinnamon mínimo sobre uma base sem desktop. Lista explícita em vez do grupo
+# cinnamon-desktop, que puxa firefox, thunderbird, pidgin, gnome-software etc.
+modules:
+  - type: dnf
+    install:
+      packages:
+        - cinnamon
+        - cinnamon-control-center
+        - cinnamon-screensaver
+        - cinnamon-translations
+        - nemo
+        - nemo-fileroller
+        - xed
+        - gnome-terminal
+        # login
+        - lightdm
+        - slick-greeter
+        - slick-greeter-cinnamon
+        # sessão X11
+        - xorg-x11-server-Xorg
+        - xorg-x11-drv-libinput
+        - xdg-desktop-portal-xapp
+        - xdg-user-dirs-gtk
+        - gnome-keyring
+        - gvfs-mtp
+        # rede, bluetooth e áudio
+        - NetworkManager-wifi
+        - network-manager-applet
+        - nm-connection-editor
+        - blueman
+        - pipewire-alsa
+        - pipewire-pulseaudio
+        - wireplumber
+        # fontes
+        - google-noto-emoji-fonts
+        - jetbrains-mono-fonts
+
+  - type: systemd
+    system:
+      enabled:
+        - lightdm.service
+
+  - type: script
+    snippets:
+      - systemctl set-default graphical.target

@@ -1,18 +1,21 @@
-RECIPE := recipes/recipe.yml
+HOSTS := pc laptop pi
+HOST ?= pc
+RECIPE := recipes/$(HOST).yml
 
 .PHONY: validate generate build iso switch clean help
 
 help:
-	@echo "Targets:"
-	@echo "  validate  - Validate $(RECIPE)"
+	@echo "Targets (HOST=$(HOST); available: $(HOSTS)):"
+	@echo "  validate  - Validate every recipe ($(HOSTS))"
 	@echo "  generate  - Render $(RECIPE) to a Containerfile"
 	@echo "  build     - Build the image locally from $(RECIPE)"
 	@echo "  iso       - Build a bootable offline ISO from $(RECIPE)"
 	@echo "  switch    - Rebase the current OS onto a locally built image"
 	@echo "  clean     - Remove local build artifacts (Containerfile, ISOs, bluebuild scripts)"
+	@echo "Pick another machine with HOST=, e.g. make build HOST=laptop"
 
 validate:
-	bluebuild validate $(RECIPE)
+	@for h in $(HOSTS); do bluebuild validate recipes/$$h.yml || exit 1; done
 
 generate:
 	bluebuild generate $(RECIPE)

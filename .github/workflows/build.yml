@@ -17,7 +17,7 @@ concurrency:
 jobs:
   bluebuild:
     name: Build Custom Image
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.runner }}
     permissions:
       contents: read
       packages: write
@@ -25,9 +25,15 @@ jobs:
     strategy:
       fail-fast: false # stop GH from cancelling all matrix builds if one fails
       matrix:
-        recipe:
+        include:
           # !! Add your recipes here
-          - recipe.yml
+          - recipe: pc.yml
+            runner: ubuntu-latest
+          - recipe: laptop.yml
+            runner: ubuntu-latest
+          # arm64 nativo: a base Fedora IoT do Pi não é construída em amd64
+          - recipe: pi.yml
+            runner: ubuntu-24.04-arm
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

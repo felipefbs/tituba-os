@@ -1,14 +1,13 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+# CLIs usadas em todas as máquinas, inclusive as sem interface gráfica
 modules:
   - type: dnf
-    repos:
-      copr:
-        - scottames/ghostty
     install:
       # CLIs de ciclo rápido (bat, fd, fzf, zoxide, fastfetch, starship) ficam no
       # Homebrew do usuário: ver homebrew/Brewfile e docs/empacotamento.md
       packages:
         - zsh
+        - git
         - make
         - ripgrep
         - jq

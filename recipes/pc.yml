@@ -19,10 +19,12 @@ modules:
 
   - from-file: common/removing.yml
   # - from-file: common/kernel.yml
-  - from-file: common/base.yml
-  - from-file: common/desktop.yml
-  - from-file: common/terminal.yml
+  - from-file: common/core.yml
+  - from-file: common/cli.yml
+  - from-file: common/docker.yml
+  - from-file: common/syncthing.yml
+  - from-file: common/apps.yml
+  - from-file: common/desktop-noctalia.yml
   - from-file: common/development.yml
   - from-file: common/gaming.yml
-  - from-file: common/services.yml
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
