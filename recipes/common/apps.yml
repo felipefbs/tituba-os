@@ -18,6 +18,8 @@ modules:
         - filelight
         - solaar
         - transmission-qt
+        - fuse # fuse libs necessary to winboat
+        - fuse-libs
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
